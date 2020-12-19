@@ -3,9 +3,14 @@ html,
 *:before,
 *:after {
   box-sizing: border-box;
-  color: #2d3436;
+  color: #7ec8dd;
 }
-
+.wrapper {
+  display: flex;
+}
+.video {
+  flex: auto;
+}
 html,
 body,
 input {
@@ -64,8 +69,8 @@ input[type="submit"].update,
 .button.star,
 .button.create,
 .button.update {
-  background-color: #b185f7;
-  border: 1px solid #b58ff1;
+  background-color: #61df1800;
+  border: 1px solid #82ee8b;
 }
 button.star:hover,
 button.create:hover,
@@ -76,7 +81,7 @@ input[type="submit"].update:hover,
 .button.star:hover,
 .button.create:hover,
 .button.update:hover {
-  background-color: #f800cf;
+  background-color: #07a6c27c;
 }
 button.star:active,
 button.create:active,
@@ -112,8 +117,9 @@ input[type="file"] {
 }
 
 .Application {
-  max-width: 600px;
-  margin: auto;
+  max-width: 500px;
+  margin: 50px;
+  flex: auto;
 }
 
 .CurrentUser,

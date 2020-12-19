@@ -2,12 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import firebase from "firebase/app";
-import Application from './components/Application';
-import './index.css';
+import Application from "./components/Application";
+import Note from "./components/Note";
+import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Application />
+    <div className="wrapper">
+      <div className="video">
+        <Note />
+      </div>
+      <Application />
+    </div>
   </React.StrictMode>,
   document.getElementById("root")
 );
@@ -16,4 +22,3 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-
