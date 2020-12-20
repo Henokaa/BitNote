@@ -2,13 +2,15 @@ import React, { useState } from "react";
 
 import YouTube from "react-youtube";
 var getYouTubeID = require("get-youtube-id");
+var getYoutubeTitle = require('get-youtube-title');
 
 export default function Note() {
-const [id, setid] = useState(" ");
+const [id, setid] = useState();
 
 function handleChange(e) {
-  setid(getYouTubeID(e.target.value))
+  setid(getYouTubeID(e.target.value));
 }
+
 
 const opts = {
   height: '500',
@@ -19,12 +21,18 @@ const opts = {
   },
 };
 
+const _onVeady = (event) => {
+  // access to player in all event handlers via event.target
+  event.target.pauseVideo();
+}
+
     return (
         <div className="APP">
           <input type="text" onChange={handleChange} required placeholder="URL..." />
-          <YouTube videoId={id} opts={opts} />
+          <YouTube videoId={id} opts={opts} onReady={_onVeady}/>
         </div>
     )
+    
 }
 
 
