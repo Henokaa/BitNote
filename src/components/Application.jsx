@@ -9,20 +9,6 @@ import { collectIdsAndDocs } from '../utilities';
 class Application extends Component {
   state = {
     posts: [
-      // {
-      //   id: '1',
-      //   title: 'A Very Hot Take',
-      //   content:
-      //     'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis suscipit repellendus modi unde cumque, fugit in ad necessitatibus eos sed quasi et! Commodi repudiandae tempora ipsum fugiat. Quam, officia excepturi!',
-      //   user: {
-      //     uid: '123',
-      //     displayName: 'Bill Murray',
-      //     email: 'billmurray@mailinator.com',
-      //     photoURL: 'https://www.fillmurray.com/300/300',
-      //   },
-      //   stars: 1,
-      //   comments: 47,
-      // },
     ],
   };
 
@@ -54,7 +40,7 @@ class Application extends Component {
   //   console.log({ snapshot });
   // }
 
-  handleCreate = async post => {   // handlecreate is the function & post  is the parameter
+  handleCreate = async post => {        // handlecreate is the function & post  is the --p-ar-amet3r
     const { posts } = this.state;
     const firestore = firebase.firestore();
     const docRef = await firestore.collection('posts').add(post);

@@ -3,7 +3,9 @@ import React from 'react';
 
 import moment from 'moment';
 
-const Post = ({ title, content, user, createdAt, stars, comments, onRemove, id}) => {
+
+const Post = ({ title, content, user, createdAt, stars, comments, onRemove, id, }) => {
+
   return (
     <article className="Post">
       <div className="Post--content">
