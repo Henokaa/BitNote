@@ -3,6 +3,7 @@ import Post from './Post';
 import AddPost from './AddPost';
 
 const Posts = ({ posts, onCreate, onRemove}) => {
+  
   return (
     <section className="Posts">
       <AddPost onCreate={onCreate} />

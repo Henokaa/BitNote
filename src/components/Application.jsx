@@ -4,6 +4,7 @@ import Posts from './Posts';
 import 'firebase/firestore';
 import firebase from "firebase/app";
 import { collectIdsAndDocs } from '../utilities';
+import Note from './Note';
 //import collectIdsAndDocs from "../utilities";
 
 class Application extends Component {
@@ -66,7 +67,7 @@ class Application extends Component {
         <Posts 
         posts={posts} 
         onCreate={this.handleCreate} 
-        onRemove={this.handleRemove} 
+        onRemove={this.handleRemove}
         />     
       </main>
     );

@@ -5,11 +5,31 @@ html,
   box-sizing: border-box;
   color: #7ec8dd;
 }
+label,
+textarea {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: #000000;
+  background-color: #ffffff;
+}
+textarea {
+  padding: 10px;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
 .wrapper {
   display: flex;
 }
 .video {
-  flex: auto;
+  flex: 1;
 }
 html,
 body,
