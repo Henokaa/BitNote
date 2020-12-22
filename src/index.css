@@ -3,14 +3,13 @@ html,
 *:before,
 *:after {
   box-sizing: border-box;
-  color: #7ec8dd;
+  color: #000000;
 }
 label,
 textarea {
   font-size: 1.5rem;
   letter-spacing: 1px;
   color: #000000;
-  background-color: #ffffff;
 }
 textarea {
   padding: 10px;

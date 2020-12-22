@@ -1,12 +1,12 @@
 import { fn } from "moment";
 import React, { useState } from "react";
-import { getSubtitles } from 'youtube-captions-scraper';
 import YouTube from "react-youtube";
 import AddPost from "./AddPost";
 import Post from "./Post";
 import Posts from "./Posts";
 var getYouTubeID = require("get-youtube-id");
 var getYoutubeTitle = require('get-youtube-title');
+var getYoutubeSubtitles = require('@joegesualdo/get-youtube-subtitles-node');
 
 export default function Note() {
 const [id, setid] = useState();
@@ -14,17 +14,19 @@ const [ytitle, setytitle] =  useState();
 const [caption, setcaption] = useState('Transcription goes here');
 
 let yttitle;
+let videoId = 'q_q61B-DyPk'
 function handleChange(e) {
   setid(getYouTubeID(e.target.value));
       getYoutubeTitle(getYouTubeID(e.target.value), function (err, title) {
         yttitle = setytitle(title);
          })
-         getSubtitles({
-          videoID: getYouTubeID(e.target.value), // youtube video id
-          lang: 'en' // default: `en`
-        }).then(captions => {
-          setcaption(captions);
-        });
+         getYoutubeSubtitles(videoId)
+         .then(subtitles => {
+           console.log(subtitles)
+         })
+         .catch(err => {
+           console.log(err)
+         })
 }
 const opts = {
   height: '400',
