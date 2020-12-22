@@ -1,6 +1,6 @@
 import { fn } from "moment";
 import React, { useState } from "react";
-
+import { getSubtitles } from 'youtube-captions-scraper';
 import YouTube from "react-youtube";
 import AddPost from "./AddPost";
 import Post from "./Post";
@@ -11,6 +11,7 @@ var getYoutubeTitle = require('get-youtube-title');
 export default function Note() {
 const [id, setid] = useState();
 const [ytitle, setytitle] =  useState();
+const [caption, setcaption] = useState('Transcription goes here');
 
 let yttitle;
 function handleChange(e) {
@@ -18,6 +19,12 @@ function handleChange(e) {
       getYoutubeTitle(getYouTubeID(e.target.value), function (err, title) {
         yttitle = setytitle(title);
          })
+         getSubtitles({
+          videoID: getYouTubeID(e.target.value), // youtube video id
+          lang: 'en' // default: `en`
+        }).then(captions => {
+          setcaption(captions);
+        });
 }
 const opts = {
   height: '400',
@@ -40,9 +47,9 @@ const _onVeady = (event) => {
          
           <label for="story">{ytitle}</label>
           <textarea id="story" name="story"
-          rows="5" cols="33">
-It was a dark and stormy night...
-</textarea>
+          rows="5" cols="76">
+          {caption}
+        </textarea>
         </div>
     )
 }
