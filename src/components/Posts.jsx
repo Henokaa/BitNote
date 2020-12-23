@@ -1,15 +1,16 @@
 import React from 'react'
 import Post from './Post';
 import AddPost from './AddPost';
+import Note from './Note';
 
-const Posts = ({ posts, onCreate, onRemove}) => {
-  
+const Posts = ({ posts, onRemove, onCreate, caption}) => {
+
   return (
     <section className="Posts">
-      <AddPost onCreate={onCreate} />
-      {posts.map( post => (
-      <Post {...post} key={post.id} onRemove={onRemove}/>
-      ))}
+      <AddPost onCreate={onCreate} caption={caption} />
+      {posts.map( posta => (
+      <Post {...posta} key={posta.id} onRemove={onRemove}/> 
+      ))} 
     </section>
   )
 }

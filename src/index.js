@@ -8,12 +8,7 @@ import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="wrapper">
-      <div className="video">
-        <Note />
-      </div>
-      <Application />
-    </div>
+    <Note />
   </React.StrictMode>,
   document.getElementById("root")
 );

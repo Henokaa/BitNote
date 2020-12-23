@@ -13,11 +13,13 @@ class AddPost extends Component {
     // For example: Prevent a submit button from submitting a form. Prevent a link from following the URL.
     const { onCreate } = this.props;
     const { title, content } = this.state;
-
+    const { caption } = this.props;
+    console.log(caption);
     const post = {
      // id: Date.now().toString(), ... no need of ID because firestore will generate one
       title,
       content,
+      caption,
       user: {
         uid: '1111',
         displayName: 'Henok',
@@ -31,7 +33,7 @@ class AddPost extends Component {
 
     onCreate(post);
 
-    this.setState({ title: '', content: '' });
+    this.setState({ title: '', content: ''});
   };
 
   render() {

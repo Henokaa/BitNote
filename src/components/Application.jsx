@@ -68,6 +68,7 @@ class Application extends Component {
         posts={posts} 
         onCreate={this.handleCreate} 
         onRemove={this.handleRemove}
+        caption={this.props.caption}
         />     
       </main>
     );
