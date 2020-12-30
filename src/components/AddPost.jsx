@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class AddPost extends Component {
   state = { title: '', content: '' };
+ 
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -11,15 +12,16 @@ class AddPost extends Component {
   handleSubmit = event => {
     event.preventDefault(); //The event. preventDefault() method stops the default action of an element from happening.
     // For example: Prevent a submit button from submitting a form. Prevent a link from following the URL.
-    const { onCreate } = this.props;
+    const { onCreate, caption, aevent } = this.props;
     const { title, content } = this.state;
-    const { caption } = this.props;
-    console.log(caption);
+  
+  
     const post = {
      // id: Date.now().toString(), ... no need of ID because firestore will generate one
       title,
       content,
       caption,
+      aevent,
       user: {
         uid: '1111',
         displayName: 'Henok',
@@ -54,7 +56,7 @@ class AddPost extends Component {
           value={content}
           onChange={this.handleChange}
         />
-        <input className="create" type="submit" value="Take Note" />
+        <input className="create" type="submit" value="Take Note" onClick={this.props.aaevent}/>
       </form>
     );
   }

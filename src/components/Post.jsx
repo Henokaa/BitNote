@@ -4,33 +4,27 @@ import React from 'react';
 import moment from 'moment';
 
 
-const Post = ({ title, content, user, createdAt, stars, comments, onRemove, id, }) => {
+const Post = ({ title, content, user, createdAt, stars, comments, onRemove, id, caption, aevent}) => {
 
   return (
     <article className="Post">
       <div className="Post--content">
         <h3>{title}</h3>
         <div>{content}</div>
+        <br></br>
+          <div style={{fontWeight: "lighter"}}>{caption}</div>
       </div>
       <div className="Post--meta">
         <div>
           <p>
             <span role="img" aria-label="star">
-              ⭐️
+              TimeOnVideo:{" "}  
             </span>
-            {stars}
+            {aevent}min                                              
           </p>
-          <p>
-            <span role="img" aria-label="comments">
-              🙊
-            </span>
-            {comments}
-          </p>
-          <p>Posted by {user.displayName}</p>
-          <p>{moment(createdAt).calendar()}</p>
+          <p>{moment(createdAt.toDate()).calendar()}</p>
         </div>
         <div>
-          <button className="star">Star</button>
           <button className="delete" onClick={() => onRemove(id)}>Delete</button>
         </div>
       </div>

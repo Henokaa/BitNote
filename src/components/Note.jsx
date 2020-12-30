@@ -8,12 +8,13 @@ import Application from "./Application";
 var getYouTubeID = require("get-youtube-id");
 var getYoutubeTitle = require('get-youtube-title');
 var getYoutubeSubtitles = require('@joegesualdo/get-youtube-subtitles-node');
-
+var a;
 export default function Note() {
+  let b = 200.343;
 const [id, setid] = useState();
-const [ytitle, setytitle] =  useState("Video title");
+const [ytitle, setytitle] =  useState("Please Paste In Your YouTube Link");
 const [caption, setcaption] = useState('Transcription goes here');
-
+const [aevent, setaevent] = useState(" ");
 let yttitle;
 let videoId = 'q_q61B-DyPk'
 function handleChange(e) {
@@ -33,25 +34,32 @@ const opts = {
 
 const _onVeady = (event) => {
   // access to player in all event handlers via event.target
+  a = event;
+  setaevent(event.target.getCurrentTime());
   event.target.pauseVideo();
+  console.log("hey"+event.target.getCurrentTime());
 }
-
+function aaevent() {
+  setaevent(Math.floor(a.target.getCurrentTime()/60));
+}
     return (
       <div className="wrapper">
       <div className="video">
         <div className="APP">
           <input type="text" onChange={handleChange} required placeholder="URL..." />
           <YouTube videoId={id} opts={opts} onReady={_onVeady}/>
-         
           <label for="story">{ytitle}</label>
+          {/* <button onClick={aaevent}>click</button>;
+          {/* <h1>{b.toString().substring(0,2)}</h1> */} 
            {/* <Posts caption={caption}/>  */}
           <textarea id="story" name="story"
           rows="5" cols="76">
           {caption}
         </textarea>
         </div>
+
       </div>
-      <Application caption={caption}/>
+      <Application caption={ytitle} aaevent={aaevent} aevent={aevent}/>
     </div>
     )
 }

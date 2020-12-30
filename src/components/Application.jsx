@@ -69,6 +69,8 @@ class Application extends Component {
         onCreate={this.handleCreate} 
         onRemove={this.handleRemove}
         caption={this.props.caption}
+        aaevent = {this.props.aaevent}
+        aevent = {this.props.aevent}
         />     
       </main>
     );
