@@ -1,5 +1,9 @@
 # BitNote
 
+ 
+Access BitNote here:-
+https://secproject-3e622.web.app/
+
 Purpose and history
 BitNote is developed to help online learner and video editor to bookmark thoughts and ideas in a fine-grained way while working or learning with online materials.
 
