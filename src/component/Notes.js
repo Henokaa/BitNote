@@ -3,6 +3,12 @@ import firebase from "firebase/app";
 import 'firebase/storage';
 import 'firebase/firestore';
 
+import 'firebase/auth';
+import 'firebase/analytics';
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>; 
      var firebaseConfig = {
         apiKey: "AIzaSyCDkndZZhEEvQuELnFO3iBh8X6sQdbYH7o",

@@ -55,7 +55,7 @@ function aaevent() {
           <textarea id="story" name="story"
           rows="5" cols="76">
           {caption}
-        </textarea>
+         </textarea>
         </div>
 
       </div>

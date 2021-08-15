@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import firestore from '../firebase';
+import {firestore,auth} from '../firebase';
 import Posts from './Posts';
 import 'firebase/firestore';
 import firebase from "firebase/app";
@@ -11,9 +11,11 @@ class Application extends Component {
   state = {
     posts: [
     ],
+    user: null,
   };
 
-  unscribe = null;
+  unscribe = null; // unsubscribe fro firestore
+  unsubscribeFromAUth = null;
 
   componentDidMount = async () => {    //imediately after initial rendering
     const firestore = firebase.firestore(); 
@@ -21,10 +23,13 @@ class Application extends Component {
     const posts = snapshot.docs.map(collectIdsAndDocs);
     this.setState({ posts });
     });
+    this.unsubscribeFromAUth = auth.onAuthStateChanged(user => {
+      this.setState({user});
+    });
   };
 
    componentWillUnmount = () => { // immediately before removing component from DOM
-      this.unsubscribe();
+      this.unscribe();
     }
     // is executed after the first render only on the client side. 
     //This is where AJAX requests and DOM or state updates should occur.

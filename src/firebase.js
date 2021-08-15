@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
+import 'firebase/auth';
 // Your web app's Firebase configuration
-import "firebase/firestore";
 var firebaseConfig = {
   apiKey: "AIzaSyCDkndZZhEEvQuELnFO3iBh8X6sQdbYH7o",
   authDomain: "secproject-3e622.firebaseapp.com",
@@ -22,3 +22,9 @@ firestore.settings(settings);
 
 window.firebase = firebase; // for debuging purpose
 export default firebase;
+export const auth = firebase.auth();
+
+
+
+export const provider = new firebase.auth.GoogleAuthProvider();
+
