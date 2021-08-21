@@ -17,12 +17,11 @@ const analytics = firebase.analytics();
 function App() {
   const [user] = useAuthState(auth);
   return (
-    <div className="App">
+    <div className="App"  style={{backgroundColor: "#dc3545"}}>
       <main>
       {user ? <Note /> : <Signin />}
       </main>
       <header>
-        <h1>⚛️🔥💬</h1>
         <SignOut />
       </header>
     </div>
