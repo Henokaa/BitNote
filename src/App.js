@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { Component } from "react";
+import Signin from "./components/Signin";
 
 import Note from "./components/Note";
 import firebase from 'firebase/app';
@@ -18,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <main>
-      {user ? <Note /> : <SignIn />}
+      {user ? <Note /> : <Signin />}
       </main>
       <header>
         <h1>⚛️🔥💬</h1>
@@ -28,21 +29,21 @@ function App() {
   );
 }
 
-function SignIn() {
+// function SignIn() {
 
-  const signInWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
-  }
+//   const signInWithGoogle = () => {
+//     const provider = new firebase.auth.GoogleAuthProvider();
+//     auth.signInWithPopup(provider);
+//   }
 
-  return (
-    <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
-    </>
-  )
+//   return (
+//     <>
+//       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
+//       <p>Do not violate the community guidelines or you will be banned for life!</p>
+//     </>
+//   )
 
-}
+// }
 
 function SignOut() {
   return auth.currentUser && (

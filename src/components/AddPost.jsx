@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { firestore } from '../firebase';
+import { auth } from '../firebase';
 
 class AddPost extends Component {
   state = { title: '', content: '' };
@@ -12,8 +14,10 @@ class AddPost extends Component {
   handleSubmit = event => {
     event.preventDefault(); //The event. preventDefault() method stops the default action of an element from happening.
     // For example: Prevent a submit button from submitting a form. Prevent a link from following the URL.
-    const { onCreate, caption, aevent } = this.props;
     const { title, content } = this.state;
+		const { uid, displayName, email, photoURL } = auth.currentUser || {};
+
+    const { onCreate, caption, aevent } = this.props;
   
   
     const post = {
@@ -22,10 +26,10 @@ class AddPost extends Component {
       content,
       caption,
       aevent,
+      uid,
       user: {
-        uid: '1111',
-        displayName: 'Henok',
-        email: 'Fish',
+        displayName,
+        email,
         photoURL: 'http://placekitten.com/g/200/200',
       },
       favorites: 0,
