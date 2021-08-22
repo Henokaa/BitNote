@@ -17,10 +17,10 @@ const analytics = firebase.analytics();
 function App() {
   const [user] = useAuthState(auth);
   return (
-    <div className="App"  style={{backgroundColor: "#dc3545"}}>
-      <main>
+    <div className="App">
+  
       {user ? <Note /> : <Signin />}
-      </main>
+     
       <header>
         <SignOut />
       </header>
