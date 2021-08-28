@@ -27,8 +27,9 @@ label {
 .wrapper {
   display: flex;
 }
-.video {
+.video div {
   flex: 1;
+  margin-left: 10px;
 }
 html,
 body,

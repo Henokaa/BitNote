@@ -7,8 +7,8 @@ import Note from "./components/Note";
 import "./index.css";
 import App from "./App"
 
-ReactDOM.render(
-  <React.StrictMode>
+ReactDOM.render(  // activates additional checks and warnings
+  <React.StrictMode> 
     <App />
   </React.StrictMode>,
   document.getElementById("root")

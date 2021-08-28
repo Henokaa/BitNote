@@ -1,8 +1,7 @@
 import "./App.css";
 import React, { Component } from "react";
 import Signin from "./components/Signin";
-
-import Note from "./components/Note";
+import Yapp from "./components/Yapp";
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
@@ -19,9 +18,10 @@ function App() {
   return (
     <div className="App">
   
-      {user ? <Note /> : <Signin />}
+      {user ? <Yapp /> : <Signin />}
      
       <header>
+      <div style={{minHeight: "50px"}}></div>
         <SignOut />
       </header>
     </div>
